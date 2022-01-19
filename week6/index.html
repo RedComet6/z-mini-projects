@@ -24,16 +24,28 @@
                 <!-- search button -->
                 <aside class="col-3">
                     <h1>Library of Congress Search Engine</h1>
-                    <form action="">
+                    <form id="searchForm" action="">
                         <input type="text" class="form-control mb-3" id="searchText" placeholder="Enter Search Terms">
+                        <select id="searchFormat" class="form-input mb-3 w-100">
+                            <option value="" disabled selected>Select a format...</option>
+                            <option value="maps">Maps</option>
+                            <option value="audio">Audio</option>
+                            <option value="photos">Photos</option>
+                            <option value="manuscripts">Manuscripts</option>
+                            <option value="newspapers">Newspapers</option>
+                            <option value="film-and-videos">Film and Videos</option>
+                            <option value="notated-music">Notated Music</option>
+                            <option value="websites">Websites</option>
+                        </select>
                         <button class="btn-primary" id="searchBtn" type="submit">Search</button>
                     </form>
+                    <div id="pastSearches"></div>
                 </aside>
                 <!-- right panel -->
                 <!-- show results -->
                 <!-- button - read more -->
                 <section class="col-9">
-                    <div>Show Results for <span id="keyword"></span></div>
+                    <div class="mb-3">Show Results for <span id="keyword"></span></div>
                     <div id="results"></div>
                 </section>
             </div>
