@@ -60,6 +60,7 @@ function handleResults(event) {
         });
 }
 
+// uses fetch when clicking past search links, adds search text as url query
 function handleQueryFetch() {
     const fetchUrl = `https://www.loc.gov/search/?fo=json&q=${myParam}`;
 
@@ -77,7 +78,7 @@ function handleQueryFetch() {
 document.querySelector("#searchForm").addEventListener("submit", handleResults);
 // check query string for text
 const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get("text");
+const myParam = urlParams.get("text") || "";
 
 if (myParam.length > 0) {
     handleQueryFetch();
