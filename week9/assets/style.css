@@ -1,0 +1,15 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.bgc-orange {
+    background-color: orange;
+}
+
+.c-lg {
+    font-size: 1.5rem;
+}
+
+.bgc-purple-hv:hover {
+    background-color: purple;
+}
