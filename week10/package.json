@@ -7,7 +7,8 @@
         "start": "node index",
         "watch": "nodemon index",
         "test": "jest",
-        "letter": "jest ./test/Letter.test.js"
+        "letter": "jest ./test/Letter.test.js",
+        "word": "jest ./test/Word.test.js"
     },
     "author": "",
     "license": "ISC",

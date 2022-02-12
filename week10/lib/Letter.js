@@ -5,7 +5,7 @@ class Letter {
     }
 
     guess(letter) {
-        if (this.char === letter) {
+        if (this.char.toLowerCase() === letter.toLowerCase()) {
             this.visible = true;
             return true;
         }
