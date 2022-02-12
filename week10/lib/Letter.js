@@ -11,6 +11,17 @@ class Letter {
         }
         return false;
     }
+
+    toString() {
+        if (this.visible === true) {
+            return this.char;
+        }
+        return "_";
+    }
+
+    getSolution() {
+        return this.char;
+    }
 }
 
 module.exports = Letter;
