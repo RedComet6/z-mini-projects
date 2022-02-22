@@ -26,7 +26,7 @@ class Word {
     }
 
     getSolution() {
-        return this.letters.map((letter) => letter.getSolution().join(""));
+        return this.letters.map((letter) => letter.getSolution()).join("");
     }
 }
 
