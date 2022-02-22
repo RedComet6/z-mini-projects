@@ -43,5 +43,32 @@
             "topic": "Gaming is not a valid topic",
             "username": "Aidan"
         }
+    },
+    {
+        "time": 1645504937623,
+        "error_id": "f6f777b6-86d0-4b08-89c8-04efbf9def1c",
+        "errors": {
+            "username": "Invalid username!",
+            "tip": "Tip must be at least 15 characters",
+            "topic": ""
+        }
+    },
+    {
+        "time": 1645504974672,
+        "error_id": "d9af8133-e883-4b40-9149-569d11ff89f9",
+        "errors": {
+            "username": "",
+            "tip": "Tip must be at least 15 characters",
+            "topic": ""
+        }
+    },
+    {
+        "time": 1645505001666,
+        "error_id": "ac2a2218-7c8d-434a-b638-6bb510524625",
+        "errors": {
+            "username": "",
+            "tip": "Tip must be at least 15 characters",
+            "topic": ""
+        }
     }
 ]
