@@ -25,9 +25,17 @@ app.get("/api/movies", (req, res) => {
     });
 });
 
+// JOIN MOVIES & REVIEWS
+app.get("/api/movies-reviews", (req, res) => {
+    // return movies list as an array of json
+    db.query("SELECT * FROM reviews JOIN movies ON reviews.movie_id = movies.id", function (err, rows) {
+        res.json({ data: rows });
+    });
+});
+
 // POST MOVIES
 app.post("/api/movies", (req, res) => {
-    const movieName = req.body.name;
+    const movieName = req.body.movieName;
     // return movies list as an array of json
     db.query("INSERT INTO movies (movie_name) VALUES (?)", movieName, function (err, rows) {
         res.json({ message: "Successfully added a movie!" });
@@ -43,6 +51,16 @@ app.delete("/api/movies", (req, res) => {
             return res.status(400).json({ error: err.message });
         }
         res.json({ message: "Successfully deleted a movie!" });
+    });
+});
+
+// UPDATE MOVIES
+app.put("/api/movies", (req, res) => {
+    const movieID = req.body.id;
+    const movieName = req.body.movieName;
+    // return movies list as an array of json
+    db.query("UPDATE movies SET movie_name = ? WHERE id = ?", [movieName, movieID], function (err, rows) {
+        res.json({ message: "Successfully updated a movie!" });
     });
 });
 
