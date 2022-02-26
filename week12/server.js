@@ -17,12 +17,32 @@ const db = mysql.createConnection(
     console.log(`Connected to the books_db database.`)
 );
 
-// route shold be /api/movies
+// GET MOVIES
 app.get("/api/movies", (req, res) => {
     // return movies list as an array of json
     db.query("SELECT * FROM movies", function (err, rows) {
-        console.log(rows);
         res.json({ data: rows });
+    });
+});
+
+// POST MOVIES
+app.post("/api/movies", (req, res) => {
+    const movieName = req.body.name;
+    // return movies list as an array of json
+    db.query("INSERT INTO movies (movie_name) VALUES (?)", movieName, function (err, rows) {
+        res.json({ message: "Successfully added a movie!" });
+    });
+});
+
+// DELETE MOVIES
+app.delete("/api/movies", (req, res) => {
+    const movieID = req.body.id;
+    // return movies list as an array of json
+    db.query("DELETE FROM movies WHERE id = ?", movieID, function (err, rows) {
+        if (err) {
+            return res.status(400).json({ error: err.message });
+        }
+        res.json({ message: "Successfully deleted a movie!" });
     });
 });
 
